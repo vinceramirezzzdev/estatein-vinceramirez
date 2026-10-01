@@ -1,0 +1,347 @@
+/* ==========================================================================
+   Forms — form cards, fields, selects, checkbox, newsletter
+   ========================================================================== */
+
+.form-card {
+  display: grid;
+  gap: var(--form-gap);
+  padding: calc(var(--form-pad) - 1px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.form-card--wide {
+  padding: calc(var(--form-pad-wide) - 1px);
+  row-gap: var(--form-gap-wide);
+}
+
+.form-grid {
+  display: grid;
+  gap: var(--form-gap) var(--form-col-gap);
+}
+
+.form-card--wide .form-grid {
+  gap: var(--form-gap-wide) var(--form-col-gap-wide);
+}
+
+.form-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.form-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.form-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.field {
+  display: grid;
+  align-content: start;
+  gap: var(--label-gap);
+  min-width: 0;
+}
+
+.field__label {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.field__control {
+  width: 100%;
+  min-height: var(--input-h);
+  padding: var(--input-py) calc(var(--input-px) - 1px);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--input-radius);
+  color: var(--c-text);
+  font-size: var(--fs-input);
+  line-height: 20px;
+  transition: border-color 0.2s ease;
+}
+
+.field__control::placeholder {
+  color: var(--c-placeholder);
+  opacity: 1;
+}
+
+.field__control:hover {
+  border-color: #333333;
+}
+
+.field__control:focus {
+  outline: none;
+  border-color: var(--c-primary);
+}
+
+.field__control[aria-invalid='true'] {
+  border-color: #e5484d;
+}
+
+.field__control--area {
+  min-height: var(--textarea-h);
+  resize: vertical;
+}
+
+/* Native select restyled to match the design (placeholder colour + chevron) */
+.field__select {
+  position: relative;
+}
+
+.field__select select {
+  padding-right: 56px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.field__select select:has(option[value='']:checked) {
+  color: var(--c-placeholder);
+}
+
+.field__select option {
+  background: var(--c-surface);
+  color: var(--c-text);
+}
+
+.field__select .icon,
+.field__selected .icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.field__selected {
+  position: relative;
+}
+
+.field__control--selected {
+  min-height: var(--selected-h);
+  padding-right: 56px;
+  border-color: transparent;
+  color: var(--c-soft);
+  font-size: var(--fs-selected);
+  line-height: 20px;
+}
+
+/* "Preferred Contact Method" — an input with a radio on the right */
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: var(--method-gap);
+  min-height: var(--input-h);
+  padding: calc(var(--method-py) - 1px) calc(var(--method-px) - 1px);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--input-radius);
+  transition: border-color 0.2s ease;
+}
+
+.contact-method:focus-within {
+  border-color: var(--c-primary);
+}
+
+.contact-method .icon {
+  width: var(--method-icon);
+  height: var(--method-icon);
+}
+
+.contact-method__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: var(--fs-input);
+  line-height: 20px;
+}
+
+.contact-method__input::placeholder {
+  color: var(--c-placeholder);
+  opacity: 1;
+}
+
+.contact-method__input:focus {
+  outline: none;
+}
+
+.contact-method__radio {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid var(--c-primary);
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+}
+
+.contact-method__radio:checked {
+  background: var(--c-primary);
+}
+
+/* Checkbox + submit row */
+.form-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--form-col-gap-wide);
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--checkbox-gap);
+  color: var(--c-muted);
+  font-size: var(--fs-ui);
+  cursor: pointer;
+}
+
+.checkbox__input {
+  position: absolute;
+  width: var(--checkbox);
+  height: var(--checkbox);
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox__box {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--checkbox);
+  height: var(--checkbox);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  color: transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Tick drawn with borders (the design only shows the unchecked state) */
+.checkbox__box::after {
+  content: '';
+  width: 7px;
+  height: 13px;
+  margin-top: -3px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox__input:checked + .checkbox__box {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+  color: var(--c-text);
+}
+
+.checkbox__input:focus-visible + .checkbox__box {
+  outline: 2px solid var(--c-primary-light);
+  outline-offset: 3px;
+}
+
+.checkbox__input[aria-invalid='true'] + .checkbox__box {
+  border-color: #e5484d;
+}
+
+.checkbox__label a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.checkbox__label a:hover {
+  color: var(--c-text);
+}
+
+.btn--submit {
+  flex: none;
+}
+
+.form-status {
+  min-height: 0;
+  color: var(--c-muted);
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status[data-state='success'] {
+  color: #3dd68c;
+}
+
+.form-status[data-state='error'] {
+  color: #ff6369;
+}
+
+/* Footer newsletter field */
+.newsletter {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--newsletter-gap);
+  max-width: var(--newsletter-w);
+  padding: var(--newsletter-py) var(--newsletter-px);
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--newsletter-radius);
+  transition: border-color 0.2s ease;
+}
+
+.newsletter:focus-within {
+  border-color: var(--c-primary);
+}
+
+.newsletter__icon {
+  width: var(--newsletter-icon);
+  height: var(--newsletter-icon);
+  color: var(--c-muted);
+}
+
+.newsletter__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: var(--fs-ui);
+  line-height: 24px;
+  letter-spacing: -0.006em;
+}
+
+.newsletter__input::placeholder {
+  color: var(--c-muted);
+  opacity: 1;
+}
+
+.newsletter__input:focus {
+  outline: none;
+}
+
+.newsletter__submit {
+  display: grid;
+  place-items: center;
+  margin-block: -3px;
+  color: var(--c-text);
+  transition: color 0.2s ease;
+}
+
+.newsletter__submit .icon {
+  width: var(--newsletter-send);
+  height: var(--newsletter-send);
+}
+
+.newsletter__submit:hover {
+  color: var(--c-primary-light);
+}
+
+.newsletter .form-status {
+  flex-basis: 100%;
+  font-size: 15px;
+}

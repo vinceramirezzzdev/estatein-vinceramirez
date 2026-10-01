@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://estatein-vinceramirez.vercel.app/sitemap.xml

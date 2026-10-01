@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Buttons
+   Figma strokes sit inside the box, so every 1px border is taken out of the
+   padding to keep the exact button heights (63 / 49 / 49px).
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: calc(var(--btn-py) - 1px) calc(var(--btn-px) - 1px);
+  border: 1px solid transparent;
+  border-radius: var(--btn-radius);
+  font-size: var(--fs-ui);
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-align: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn .icon {
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+}
+
+.btn--primary {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+}
+
+.btn--primary:hover {
+  background: var(--c-primary-hover);
+  border-color: var(--c-primary-hover);
+}
+
+/* Surface button: "View All …", "Learn More", "Read More", "Visit Website" */
+.btn--dark {
+  background: var(--c-surface);
+  border-color: var(--c-border);
+}
+
+/* Darker surface: navbar "Contact Us", Services promo cards */
+.btn--darker {
+  background: var(--c-bg);
+  border-color: var(--c-border);
+}
+
+/* Transparent: hero "Learn More" */
+.btn--outline {
+  background: transparent;
+  border-color: var(--c-border);
+}
+
+.btn--dark:hover,
+.btn--darker:hover,
+.btn--outline:hover {
+  background: var(--c-border);
+}
+
+.btn--block {
+  display: flex;
+  width: 100%;
+}
+
+/* "Read More" (FAQ) and "Get Direction" use a tighter line height (23.6 / 18.3px) */
+.btn--sm {
+  line-height: var(--btn-sm-lh);
+}
+
+.btn--submit {
+  padding: calc(var(--submit-py) - 1px) calc(var(--submit-px) - 1px);
+  border-radius: var(--submit-radius);
+  line-height: 24px;
+}
+
+/* Round arrow buttons used by carousels and the gallery */
+.arrow-btn {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--arrow-btn);
+  height: var(--arrow-btn);
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  background: var(--c-surface);
+  color: var(--c-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.arrow-btn .icon {
+  width: var(--arrow-icon);
+  height: var(--arrow-icon);
+}
+
+.arrow-btn:not(:disabled):hover {
+  background: var(--c-border);
+}
+
+.arrow-btn:disabled {
+  background: transparent;
+  color: var(--c-disabled);
+}

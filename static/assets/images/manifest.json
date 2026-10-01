@@ -1,0 +1,248 @@
+{
+  "hero-buildings": {
+    "width": 1840,
+    "height": 1628,
+    "widths": [
+      720,
+      1080,
+      1440,
+      1840
+    ]
+  },
+  "seaside-serenity-villa": {
+    "width": 1060,
+    "height": 706,
+    "widths": [
+      360,
+      480,
+      720,
+      1060
+    ]
+  },
+  "metropolitan-haven": {
+    "width": 626,
+    "height": 504,
+    "widths": [
+      360,
+      480,
+      626
+    ]
+  },
+  "rustic-retreat-cottage": {
+    "width": 740,
+    "height": 688,
+    "widths": [
+      360,
+      480,
+      740
+    ]
+  },
+  "client-wade-warren": {
+    "width": 626,
+    "height": 417,
+    "widths": [
+      120,
+      240
+    ]
+  },
+  "client-emelie-thomson": {
+    "width": 626,
+    "height": 418,
+    "widths": [
+      120,
+      240
+    ]
+  },
+  "client-john-mans": {
+    "width": 626,
+    "height": 417,
+    "widths": [
+      120,
+      240
+    ]
+  },
+  "about-journey": {
+    "width": 1570,
+    "height": 1092,
+    "widths": [
+      480,
+      760,
+      1140,
+      1570
+    ]
+  },
+  "team-max-mitchell": {
+    "width": 1060,
+    "height": 706,
+    "widths": [
+      360,
+      640,
+      1060
+    ]
+  },
+  "team-sarah-johnson": {
+    "width": 635,
+    "height": 506,
+    "widths": [
+      360,
+      635
+    ]
+  },
+  "team-david-brown": {
+    "width": 626,
+    "height": 482,
+    "widths": [
+      360,
+      626
+    ]
+  },
+  "team-michael-turner": {
+    "width": 634,
+    "height": 506,
+    "widths": [
+      360,
+      634
+    ]
+  },
+  "villa-gallery-01": {
+    "width": 1060,
+    "height": 706,
+    "widths": [
+      320,
+      480,
+      760,
+      1060
+    ]
+  },
+  "villa-gallery-02": {
+    "width": 1060,
+    "height": 706,
+    "widths": [
+      320,
+      480,
+      760,
+      1060
+    ]
+  },
+  "villa-gallery-03": {
+    "width": 1060,
+    "height": 707,
+    "widths": [
+      320,
+      480,
+      760,
+      1060
+    ]
+  },
+  "villa-gallery-04": {
+    "width": 1060,
+    "height": 706,
+    "widths": [
+      320,
+      480,
+      760,
+      1060
+    ]
+  },
+  "villa-gallery-05": {
+    "width": 626,
+    "height": 417,
+    "widths": [
+      320,
+      480,
+      626
+    ]
+  },
+  "villa-gallery-06": {
+    "width": 626,
+    "height": 417,
+    "widths": [
+      320,
+      480,
+      626
+    ]
+  },
+  "villa-gallery-07": {
+    "width": 626,
+    "height": 417,
+    "widths": [
+      320,
+      480,
+      626
+    ]
+  },
+  "villa-gallery-08": {
+    "width": 626,
+    "height": 417,
+    "widths": [
+      320,
+      480,
+      626
+    ]
+  },
+  "villa-gallery-09": {
+    "width": 626,
+    "height": 521,
+    "widths": [
+      320,
+      480,
+      626
+    ]
+  },
+  "office-gallery-01": {
+    "width": 1577,
+    "height": 511,
+    "widths": [
+      480,
+      760,
+      1140,
+      1577
+    ]
+  },
+  "office-gallery-02": {
+    "width": 1577,
+    "height": 512,
+    "widths": [
+      480,
+      760,
+      1140,
+      1577
+    ]
+  },
+  "office-gallery-03": {
+    "width": 1578,
+    "height": 511,
+    "widths": [
+      480,
+      760,
+      1140,
+      1578
+    ]
+  },
+  "office-gallery-04": {
+    "width": 769,
+    "height": 512,
+    "widths": [
+      360,
+      769
+    ]
+  },
+  "office-gallery-05": {
+    "width": 770,
+    "height": 512,
+    "widths": [
+      360,
+      770
+    ]
+  },
+  "office-gallery-06": {
+    "width": 1576,
+    "height": 500,
+    "widths": [
+      480,
+      760,
+      1140,
+      1576
+    ]
+  }
+}

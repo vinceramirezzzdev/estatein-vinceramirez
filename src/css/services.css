@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Services — service cards, promo cards, investment grid
+   ========================================================================== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.service-card {
+  display: grid;
+  align-content: start;
+  gap: var(--service-gap);
+  padding: calc(var(--service-pad) - 1px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.service-card--filled {
+  background: var(--c-bg);
+}
+
+.service-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--service-head-gap);
+}
+
+.service-card__title {
+  font-size: var(--fs-h3);
+}
+
+.service-card__copy {
+  color: var(--c-muted);
+}
+
+/* Promo cards with the abstract line pattern behind them */
+.promo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--service-gap);
+  overflow: hidden;
+  padding: calc(var(--service-pad) - 1px);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.promo-card--wide {
+  grid-column: span 2;
+}
+
+.promo-card__pattern {
+  position: absolute;
+  top: var(--promo-pattern-top);
+  left: var(--promo-pattern-left);
+  width: var(--promo-pattern-w);
+  height: var(--promo-pattern-h);
+  background: url('../icons/pattern-hero.svg') 0 0 / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+.promo-card--stacked .promo-card__pattern {
+  top: var(--stacked-pattern-top);
+  left: var(--stacked-pattern-left);
+  width: var(--stacked-pattern-w);
+  height: var(--stacked-pattern-h);
+}
+
+.promo-card > :not(.promo-card__pattern) {
+  position: relative;
+}
+
+.promo-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--promo-head-gap);
+}
+
+.promo-card__title {
+  font-size: var(--fs-promo);
+  font-weight: 700;
+}
+
+.promo-card__title--sm {
+  font-size: var(--fs-promo-sm);
+  font-weight: 600;
+}
+
+.promo-card__copy {
+  color: var(--c-muted);
+}
+
+.promo-card__copy--light {
+  color: var(--c-soft);
+}
+
+.promo-card .btn {
+  flex: none;
+}
+
+/* Smart Investments */
+.investments {
+  display: grid;
+  grid-template-columns: minmax(0, 519fr) minmax(0, 1017fr);
+  align-items: center;
+  gap: var(--investments-gap);
+}
+
+.investments__intro {
+  display: grid;
+  gap: var(--investments-intro-gap);
+}
+
+.investments__text {
+  position: relative;
+  display: grid;
+  gap: var(--title-gap);
+}
+
+.investments__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  background: var(--c-surface);
+  border-radius: var(--radius);
+}

@@ -1,0 +1,717 @@
+/* ==========================================================================
+   Estatein — design tokens
+   Every value comes from the Figma file (Desktop 1920 / Laptop 1440 /
+   Mobile 390 frames).
+
+   fluid(<laptop>, <desktop>) is expanded by the build into a clamp() that is
+   exactly the Laptop value at 1440px, exactly the Desktop value at 1920px and
+   interpolates in between (below 1440px it stays at the Laptop value).
+   The Mobile values are set in the max-width: 767px block at the bottom.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Urbanist';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/urbanist-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Urbanist';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/urbanist-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* Colour (Figma styles: Grey/08 #141414, Grey/10 #1a1a1a, Grey/15 #262626,
+     Purple/60 #703bf7, Purple/65 #8254f8, Purple/75 #a685fa …) */
+  --c-bg: #141414;
+  --c-surface: #1a1a1a;
+  --c-border: #262626;
+  --c-ring: #191919;
+  --c-text: #ffffff;
+  --c-muted: #999999;
+  --c-placeholder: #666666;
+  --c-disabled: #808080;
+  --c-dot: #4d4d4d;
+  --c-soft: #e4e4e7;
+  --c-primary: #703bf7;
+  --c-primary-hover: #8254f8;
+  --c-primary-light: #a685fa;
+  --c-star: #ffe500;
+  --c-nav-border: var(--c-border);
+
+  --font: 'Urbanist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout */
+  --content-max: 1596px;
+  --gutter: fluid(80px, 162px);
+  --section-space: fluid(120px, 150px);
+  --first-section-space: fluid(70px, 100px);
+  --details-first-space: fluid(80px, 120px);
+  --home-cta-space: fluid(72px, 96px);
+  --head-space: fluid(60px, 80px);
+  --head-btn-gap: fluid(150px, 200px);
+  --head-pad-narrow: fluid(250px, 300px);
+  --head-pad-wide: 250px;
+  --head-pad-pricing: fluid(200px, 300px);
+  --title-gap: fluid(10px, 14px);
+  --grid-gap: fluid(20px, 30px);
+  --clients-gap: fluid(40px, 50px);
+  --radius: fluid(10px, 12px);
+
+  /* Type */
+  --fs-hero: fluid(46px, 60px);
+  --fs-h2: fluid(38px, 48px);
+  --fs-h3-xl: fluid(24px, 30px);
+  --fs-h3-lg: fluid(20px, 26px);
+  --fs-h3: fluid(20px, 24px);
+  --fs-body: fluid(16px, 18px);
+  --fs-ui: fluid(14px, 18px);
+  --fs-banner: fluid(14px, 18px);
+  --fs-stat: fluid(30px, 40px);
+  --fs-person: fluid(18px, 20px);
+  --fs-label: fluid(16px, 20px);
+  --fs-count: fluid(16px, 20px);
+  --fs-tile: fluid(16px, 20px);
+  --fs-footer-title: fluid(18px, 20px);
+  --fs-footer-link: fluid(16px, 18px);
+  --fs-legal: fluid(14px, 18px);
+  --fs-input: fluid(14px, 18px);
+  --fs-search: fluid(20px, 24px);
+  --fs-team-name: fluid(20px, 24px);
+  --fs-team-role: fluid(16px, 18px);
+  --fs-promo: fluid(24px, 30px);
+  --fs-promo-sm: fluid(22px, 24px);
+  --fs-selected: fluid(14px, 20px);
+  --fs-listing: fluid(30px, 40px);
+  --fs-step-num: fluid(16px, 20px);
+  --fs-fact: fluid(16px, 20px);
+  --fs-fact-label: fluid(14px, 18px);
+
+  /* Buttons */
+  --btn-py: fluid(14px, 18px);
+  --btn-px: fluid(20px, 24px);
+  --btn-radius: fluid(8px, 10px);
+  --btn-icon: fluid(20px, 24px);
+  --btn-sm-lh: 1.3125;
+  --submit-py: fluid(14px, 18px);
+  --submit-px: fluid(34px, 46px);
+  --submit-radius: fluid(6px, 8px);
+  --arrow-btn: fluid(44px, 58px);
+  --arrow-icon: fluid(24px, 30px);
+
+  /* Header */
+  --logo-w: fluid(113.33px, 160px);
+  --logo-h: fluid(34px, 48px);
+  --footer-logo-w: fluid(113.33px, 160px);
+  --footer-logo-h: fluid(34px, 48px);
+  --banner-h: fluid(49px, 63px);
+  --banner-pt: fluid(14px, 18px);
+  --banner-pb: fluid(14px, 18px);
+  --banner-px: fluid(80px, 160px);
+  --banner-gap: fluid(6px, 10px);
+  --banner-justify: center;
+  --banner-close: fluid(26px, 32px);
+  --banner-close-icon: fluid(18px, 24px);
+  --banner-close-right: 32px;
+  --banner-pattern-top: fluid(-499px, -610px);
+  --banner-pattern-left: fluid(-63px, 0px);
+  --banner-pattern-w: fluid(1566px, 1920px);
+  --banner-pattern-h: fluid(1046px, 1282px);
+  --nav-py: fluid(14px, 20px);
+  --nav-gap: fluid(24px, 30px);
+  --nav-link-py: fluid(12px, 14px);
+  --nav-cta-py: fluid(14px, 16px);
+
+  /* Home hero */
+  --hero-h: fluid(622px, 814px);
+  --hero-gap: fluid(60px, 80px);
+  --hero-content-pr: 0px;
+  --hero-stack-gap: fluid(50px, 60px);
+  --hero-text-gap: fluid(20px, 24px);
+  --hero-actions-gap: fluid(16px, 20px);
+  --hero-pattern-top: fluid(-333px, -237px);
+  --hero-pattern-left: fluid(-617px, -502px);
+  --hero-pattern-w: 1924px;
+  --hero-pattern-h: 1286px;
+  --badge: fluid(129px, 175px);
+  --badge-overlap: fluid(5px, 16px);
+  --badge-top: fluid(-3px, 0px);
+
+  /* Page heroes (Properties, Services, Contact) */
+  --page-hero-pad-top: fluid(100px, 150px);
+  --page-hero-pad-bottom: 100px;
+  --page-hero-text-max: fluid(1160px, 1358px);
+
+  /* Sparkles above section titles */
+  --sparkles-w: fluid(54.72px, 68.4px);
+  --sparkles-h: fluid(24px, 30px);
+  --sparkles-top: fluid(30px, 40px);
+  --sparkles-left: fluid(10px, 20px);
+
+  /* Cards */
+  --card-pad: fluid(30px, 40px);
+  --card-pad-lg: fluid(40px, 50px);
+  --card-gap: fluid(20px, 30px);
+  --card-gap-md: fluid(24px, 30px);
+  --card-body-gap: fluid(24px, 30px);
+  --card-text-gap: fluid(4px, 6px);
+  --card-intro-gap: fluid(16px, 20px);
+  --card-footer-gap: fluid(40px, 50px);
+  --card-footer-gap-sm: fluid(30px, 50px);
+  --home-card-img: 353.3 / 255;
+  --listing-card-img: 353 / 250;
+  --listing-pad: fluid(30px, 40px);
+  --testimonial-gap: fluid(30px, 40px);
+  --testimonial-text-gap: fluid(10px, 14px);
+  --carousel-footer-space: fluid(40px, 50px);
+  --carousel-footer-pt: fluid(16px, 20px);
+  --tag-gap: fluid(6px, 10px);
+  --tag-py: fluid(6px, 8px);
+  --tag-px: 14px;
+  --tag-px-category: fluid(12px, 14px);
+  --tag-icon: fluid(20px, 24px);
+  --price-gap: fluid(0px, 2px);
+  --pill-py: fluid(10px, 14px);
+  --pill-px: fluid(16px, 20px);
+  --stars-gap: fluid(8px, 10px);
+  --star-box-w: fluid(38px, 44px);
+  --star-box-h: fluid(36px, 44px);
+  --star-icon: fluid(20px, 24px);
+  --avatar: fluid(50px, 60px);
+  --person-gap: fluid(10px, 12px);
+  --person-text-gap: fluid(0px, 2px);
+  --faq-gap: fluid(24px, 30px);
+  --stats-gap: fluid(16px, 20px);
+  --stat-py: fluid(14px, 16px);
+  --stat-px: fluid(20px, 24px);
+  --stat-roomy-py: fluid(20px, 24px);
+  --stat-roomy-px: fluid(20px, 24px);
+  --stats-roomy-gap: fluid(16px, 20px);
+
+  /* Feature strip + icon rings */
+  --strip-gap: fluid(10px, 20px);
+  --strip-pad: fluid(10px, 20px);
+  --ring-shadow: fluid(6px, 10px);
+  --ring-shadow-sm: fluid(6px, 8px);
+  --tile-gap: fluid(16px, 20px);
+  --tile-py: fluid(30px, 40px);
+  --tile-px: fluid(16px, 20px);
+  --tile-arrow: fluid(26px, 34px);
+  --tile-arrow-offset: 20px;
+  --tile-links-gap: fluid(20px, 30px);
+  --ring-outer: fluid(60px, 82px);
+  --ring-inner: fluid(44px, 62px);
+  --ring-icon: fluid(24px, 34px);
+
+  /* Forms */
+  --form-pad: fluid(40px, 50px);
+  --form-gap: fluid(20px, 30px);
+  --form-col-gap: 30px;
+  --form-footer-space: fluid(40px, 50px);
+  --form-pad-wide: fluid(50px, 100px);
+  --form-gap-wide: fluid(30px, 50px);
+  --form-col-gap-wide: fluid(30px, 50px);
+  --label-gap: fluid(14px, 16px);
+  --input-h: fluid(52px, 68px);
+  --input-py: fluid(15px, 23px);
+  --input-px: 20px;
+  --input-radius: fluid(6px, 8px);
+  --textarea-h: fluid(122px, 170px);
+  --selected-h: fluid(52px, 72px);
+  --method-py: fluid(16px, 22px);
+  --method-px: fluid(20px, 24px);
+  --method-gap: fluid(6px, 12px);
+  --method-icon: fluid(20px, 24px);
+  --checkbox: fluid(24px, 28px);
+  --checkbox-gap: fluid(6px, 10px);
+  --newsletter-w: fluid(305px, 423px);
+  --newsletter-py: fluid(13px, 17px);
+  --newsletter-px: fluid(19px, 23px);
+  --newsletter-gap: fluid(6px, 10px);
+  --newsletter-icon: fluid(20px, 24px);
+  --newsletter-send: fluid(24px, 30px);
+  --newsletter-radius: fluid(8px, 12px);
+
+  /* Properties search */
+  --search-hero-pad-bottom: fluid(130px, 160px);
+  --search-overlap: 52px;
+  --search-gap: 50px;
+  --search-bar-max: fluid(1100px, 1300px);
+  --search-stack-gap: fluid(2px, 10px);
+  --search-radius: 12px 12px 0 0;
+  --search-btn-gap: fluid(6px, 8px);
+  --filters-pad: 10px;
+  --search-pad: fluid(16px, 20px);
+  --search-pad-left: fluid(20px, 24px);
+  --filters-gap: 20px;
+  --filter-h: fluid(52px, 72px);
+  --filter-px: fluid(14px, 20px);
+  --filter-radius: fluid(8px, 12px);
+  --filter-inner-gap: fluid(8px, 10px);
+  --filter-chevron: fluid(28px, 32px);
+
+  /* About */
+  --split-gap: fluid(60px, 80px);
+  --journey-gap: fluid(50px, 80px);
+  --journey-max: fluid(1280px, 1590px);
+  --journey-img: 610 / 435;
+  --journey-pattern-top: fluid(-303px, -248px);
+  --journey-pattern-left: fluid(-475px, -402px);
+  --journey-pattern-w: 1560px;
+  --journey-pattern-h: 1042px;
+  --step-radius: 12px;
+  --team-img-radius: fluid(10px, 12px);
+  --team-social-icon: fluid(20px, 24px);
+  --hello-icon: fluid(20px, 24px);
+  --client-pad: fluid(40px, 50px);
+  --client-radius: 12px;
+  --client-dt-gap: fluid(4px, 6px);
+  --client-dt-icon: fluid(20px, 24px);
+  --values-pad: fluid(50px, 60px);
+  --values-cell-gap: fluid(24px, 30px);
+  --value-gap: fluid(16px, 20px);
+  --value-head-gap: fluid(10px, 14px);
+  --value-icon-box: fluid(60px, 74px);
+  --value-icon: fluid(28px, 34px);
+  --achievements-gap: fluid(30px, 40px);
+  --achievement-gap: fluid(24px, 30px);
+  --steps-row-gap: fluid(40px, 50px);
+  --step-num-py: fluid(14px, 16px);
+  --step-num-px: fluid(16px, 20px);
+  --step-gap: fluid(16px, 20px);
+  --team-gap: 50px;
+  --team-text-gap: fluid(20px, 24px);
+  --team-name-gap: fluid(4px, 6px);
+  --team-pad: fluid(24px, 30px);
+  --team-img-ratio: 257 / 220;
+  --team-social-w: fluid(60px, 76px);
+  --team-social-h: fluid(40px, 52px);
+  --hello-pad: fluid(10px, 14px);
+  --hello-pad-left: fluid(20px, 24px);
+  --hello-btn: fluid(36px, 44px);
+  --client-gap: fluid(30px, 40px);
+  --client-head-gap: fluid(20px, 30px);
+  --client-name-gap: fluid(4px, 6px);
+  --client-facts-gap: fluid(40px, 60px);
+  --client-fact-gap: fluid(6px, 8px);
+  --client-quote-pad: fluid(24px, 30px);
+  --client-quote-gap: fluid(10px, 14px);
+
+  /* Property details */
+  --details-head-space: fluid(40px, 50px);
+  --location-pad: fluid(8px, 10px);
+  --location-gap: fluid(4px, 6px);
+  --location-radius: fluid(6px, 8px);
+  --property-title-gap: 20px;
+  --gallery-pad: fluid(40px, 50px);
+  --gallery-img-gap: 30px;
+  --thumb-ratio: 122.2 / 74;
+  --panel-pad: fluid(40px, 50px);
+  --pricing-gap: fluid(40px, 50px);
+  --pricing-body-gap: fluid(40px, 50px);
+  --cost-col-gap: fluid(20px, 40px);
+  --cost-note-radius: 28px;
+  --gallery-gap: fluid(20px, 30px);
+  --thumbs-pad: fluid(10px, 20px);
+  --thumbs-gap: fluid(10px, 20px);
+  --thumb-radius: fluid(6px, 8px);
+  --gallery-img-ratio: 585 / 507;
+  --gallery-controls-pad: fluid(8px, 10px);
+  --dot-w: fluid(11px, 20px);
+  --dot-h: fluid(3px, 5px);
+  --dot-gap: fluid(3px, 4px);
+  --card-gap-lg: fluid(40px, 50px);
+  --specs-pt: fluid(16px, 20px);
+  --specs-gap: fluid(20px, 40px);
+  --spec-gap: fluid(8px, 10px);
+  --amenity-py: fluid(14px, 18px);
+  --amenity-px: fluid(16px, 24px);
+  --amenities-gap: fluid(20px, 30px);
+  --inquire-gap: fluid(80px, 100px);
+  --inquire-text-w: fluid(412px, 519px);
+  --note-py: fluid(20px, 30px);
+  --note-px: fluid(40px, 50px);
+  --note-gap: fluid(16px, 20px);
+  --note-radius: fluid(8px, 12px);
+  --listing-w: fluid(194px, 220px);
+  --cost-space: fluid(30px, 40px);
+  --cost-gap: fluid(12px, 16px);
+  --cost-note-py: fluid(6px, 8px);
+  --cost-note-px: fluid(12px, 14px);
+
+  /* Services */
+  --service-head-gap: fluid(16px, 20px);
+  --promo-head-gap: fluid(14px, 20px);
+  --investments-gap: fluid(50px, 60px);
+  --service-pad: fluid(40px, 50px);
+  --service-gap: fluid(20px, 30px);
+  --investments-intro-gap: fluid(40px, 50px);
+  --promo-pattern-top: fluid(-457px, -608px);
+  --promo-pattern-left: fluid(-77px, -102px);
+  --promo-pattern-w: fluid(1422px, 1924px);
+  --promo-pattern-h: fluid(950px, 1286px);
+  --stacked-pattern-top: fluid(-218px, -571px);
+  --stacked-pattern-left: fluid(-170px, 0px);
+  --stacked-pattern-w: fluid(1245px, 1924px);
+  --stacked-pattern-h: fluid(832px, 1286px);
+
+  /* Contact */
+  --tabs-w: fluid(413px, 516px);
+  --tabs-radius: fluid(8px, 12px);
+  --office-gap: fluid(30px, 40px);
+  --office-radius: fluid(8px, 12px);
+  --offices-gap: fluid(40px, 50px);
+  --office-pad: fluid(40px, 50px);
+  --gallery-pattern-top: fluid(-422px, -328px);
+  --gallery-pattern-left: fluid(-563px, -404px);
+  --gallery-pattern-w: 2406px;
+  --gallery-pattern-h: 1608px;
+  --office-gallery-pad: fluid(60px, 80px);
+
+  /* CTA + footer */
+  --cta-py: fluid(60px, 100px);
+  --cta-gap: fluid(150px, 250px);
+  --cta-text-max: fluid(979px, 1154px);
+  --cta-pattern-left-top: fluid(1px, 59px);
+  --cta-pattern-left-w: fluid(474px, 566px);
+  --cta-pattern-left-h: fluid(258px, 308px);
+  --cta-pattern-left-left: fluid(0px, -20px);
+  --cta-pattern-left-transform: none;
+  --cta-pattern-right-top: fluid(-30px, 36px);
+  --cta-pattern-right-w: fluid(569px, 725px);
+  --cta-pattern-right-h: fluid(310px, 394px);
+  --cta-pattern-right-overflow: fluid(14px, 92px);
+  --footer-py: fluid(80px, 100px);
+  --footer-gap: 80px;
+  --footer-brand-w: fluid(326px, 538px);
+  --cta-text-gap: fluid(10px, 14px);
+  --footer-brand-gap: fluid(24px, 30px);
+  --footer-links-gap: 50px;
+  --footer-col-gap: fluid(24px, 30px);
+  --footer-list-gap: fluid(16px, 20px);
+  --footer-bar-py: fluid(12px, 16px);
+  --footer-legal-gap: fluid(20px, 38px);
+  --footer-legal-py: 10px;
+  --social-btn: fluid(40px, 52px);
+  --social-icon: fluid(20px, 24px);
+  --social-gap: fluid(8px, 10px);
+  --social-py: fluid(0px, 10px);
+}
+
+/* Image proportions change per design frame, so they switch at the breakpoints. */
+@media (min-width: 1920px) {
+  :root {
+    --home-card-img: 432 / 318;
+    --listing-card-img: 432 / 318;
+    --team-img-ratio: 316.8 / 253;
+    --gallery-img-ratio: 733 / 583;
+    --journey-img: 755 / 546;
+    --thumb-ratio: 144 / 94;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile (Figma "… - Mobile" frames, 390px wide)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --c-nav-border: #211e2f;
+
+    --gutter: 16px;
+    --section-space: 80px;
+    --first-section-space: 50px;
+    --details-first-space: 60px;
+    --home-cta-space: 80px;
+    --head-space: 40px;
+    --title-gap: 8px;
+    --grid-gap: 20px;
+    --radius: 10px;
+
+    --fs-hero: 28px;
+    --fs-h2: 28px;
+    --fs-h3-xl: 20px;
+    --fs-h3-lg: 18px;
+    --fs-h3: 18px;
+    --fs-body: 14px;
+    --fs-ui: 14px;
+    --fs-banner: 12px;
+    --fs-stat: 24px;
+    --fs-person: 16px;
+    --fs-label: 16px;
+    --fs-count: 14px;
+    --fs-tile: 14px;
+    --fs-footer-title: 16px;
+    --fs-footer-link: 14px;
+    --fs-legal: 14px;
+    --fs-input: 14px;
+    --fs-search: 16px;
+    --fs-team-name: 18px;
+    --fs-team-role: 14px;
+    --fs-promo: 20px;
+    --fs-promo-sm: 20px;
+    --fs-selected: 14px;
+    --fs-listing: 24px;
+    --fs-step-num: 16px;
+    --fs-fact: 14px;
+    --fs-fact-label: 12px;
+
+    --btn-py: 14px;
+    --btn-px: 20px;
+    --btn-radius: 8px;
+    --btn-icon: 20px;
+    --submit-py: 14px;
+    --submit-px: 34px;
+    --submit-radius: 6px;
+    --arrow-btn: 44px;
+    --arrow-icon: 24px;
+
+    --logo-w: 93.33px;
+    --logo-h: 28px;
+    --footer-logo-w: 113.33px;
+    --footer-logo-h: 34px;
+    --banner-h: 78px;
+    --banner-pt: 40px;
+    --banner-pb: 20px;
+    --banner-px: 16px;
+    --banner-gap: 6px;
+    --banner-justify: flex-start;
+    --banner-close: 26px;
+    --banner-close-icon: 18px;
+    --banner-close-right: 16px;
+    --banner-pattern-top: -485px;
+    --banner-pattern-left: -588px;
+    --banner-pattern-w: 1566px;
+    --banner-pattern-h: 1046px;
+    --nav-py: 20px;
+
+    --hero-stack-gap: 40px;
+    --hero-text-gap: 16px;
+    --hero-actions-gap: 16px;
+    --badge: 117px;
+
+    --page-hero-pad-top: 50px;
+    --page-hero-pad-bottom: 50px;
+    --search-hero-pad-bottom: 50px;
+
+    --sparkles-w: 45.6px;
+    --sparkles-h: 20px;
+    --sparkles-top: 19px;
+    --sparkles-left: 8px;
+
+    --card-pad: 24px;
+    --card-pad-lg: 30px;
+    --card-gap: 16px;
+    --card-gap-md: 24px;
+    --card-body-gap: 20px;
+    --card-text-gap: 2px;
+    --card-intro-gap: 16px;
+    --card-footer-gap: 30px;
+    --card-footer-gap-sm: 30px;
+    --home-card-img: 310 / 210;
+    --listing-card-img: 317 / 211;
+    --listing-pad: 20px;
+    --testimonial-gap: 24px;
+    --testimonial-text-gap: 6px;
+    --carousel-footer-space: 30px;
+    --carousel-footer-pt: 16px;
+    --tag-gap: 6px;
+    --tag-py: 6px;
+    --tag-px-category: 12px;
+    --tag-icon: 20px;
+    --price-gap: 0px;
+    --pill-py: 10px;
+    --pill-px: 16px;
+    --stars-gap: 8px;
+    --star-box-w: 30px;
+    --star-box-h: 30px;
+    --star-icon: 18px;
+    --avatar: 50px;
+    --person-gap: 10px;
+    --person-text-gap: 0px;
+    --faq-gap: 20px;
+    --stats-gap: 12px;
+    --stat-py: 16px;
+    --stat-px: 16px;
+    --stat-roomy-py: 18px;
+    --stat-roomy-px: 16px;
+    --stats-roomy-gap: 16px;
+
+    --strip-gap: 10px;
+    --strip-pad: 10px;
+    --ring-shadow: 4px;
+    --ring-shadow-sm: 4px;
+    --tile-gap: 14px;
+    --tile-py: 20px;
+    --tile-px: 14px;
+    --tile-arrow: 26px;
+    --ring-outer: 48px;
+    --ring-inner: 36px;
+    --ring-icon: 20px;
+
+    --form-pad: 20px;
+    --form-gap: 20px;
+    --form-footer-space: 30px;
+    --form-pad-wide: 20px;
+    --form-gap-wide: 20px;
+    --label-gap: 10px;
+    --input-h: 52px;
+    --input-py: 15px;
+    --input-radius: 6px;
+    --textarea-h: 90px;
+    --selected-h: 52px;
+    --method-py: 16px;
+    --method-px: 20px;
+    --method-gap: 6px;
+    --method-icon: 20px;
+    --checkbox: 24px;
+    --checkbox-gap: 6px;
+    --newsletter-w: 100%;
+    --newsletter-py: 13px;
+    --newsletter-px: 19px;
+    --newsletter-gap: 6px;
+    --newsletter-icon: 20px;
+    --newsletter-send: 24px;
+    --newsletter-radius: 8px;
+
+    --filter-h: 52px;
+    --search-overlap: -40px;
+    --search-stack-gap: 20px;
+    --search-gap: 20px;
+    --search-pad: 10px;
+    --search-pad-left: 18px;
+    --search-radius: 12px;
+    --filters-gap: 20px;
+    --filters-pad: 20px;
+    --filter-px: 14px;
+    --filter-radius: 8px;
+    --filter-inner-gap: 8px;
+    --filter-chevron: 28px;
+
+    --journey-gap: 40px;
+    --journey-img: 358 / 310;
+    --journey-pattern-top: -54px;
+    --journey-pattern-left: -134px;
+    --journey-pattern-w: 626px;
+    --journey-pattern-h: 418px;
+    --step-radius: 10px;
+    --team-img-radius: 10px;
+    --team-social-icon: 20px;
+    --hello-icon: 20px;
+    --client-pad: 24px;
+    --client-radius: 10px;
+    --client-dt-gap: 4px;
+    --client-dt-icon: 20px;
+    --values-pad: 24px;
+    --value-gap: 14px;
+    --value-head-gap: 8px;
+    --value-icon-box: 52px;
+    --value-icon: 24px;
+    --achievements-gap: 20px;
+    --achievement-gap: 16px;
+    --steps-row-gap: 30px;
+    --step-num-py: 14px;
+    --step-num-px: 16px;
+    --step-gap: 14px;
+    --team-gap: 40px;
+    --team-text-gap: 16px;
+    --team-name-gap: 2px;
+    --team-pad: 20px;
+    --team-img-ratio: 318 / 268;
+    --team-social-w: 60px;
+    --team-social-h: 40px;
+    --hello-pad: 8px;
+    --hello-pad-left: 24px;
+    --hello-btn: 48px;
+    --client-gap: 30px;
+    --client-head-gap: 20px;
+    --client-name-gap: 4px;
+    --client-facts-gap: 16px;
+    --client-fact-gap: 6px;
+    --client-quote-pad: 20px;
+    --client-quote-gap: 8px;
+
+    --details-head-space: 20px;
+    --location-gap: 4px;
+    --location-radius: 6px;
+    --property-title-gap: 10px;
+    --gallery-pad: 20px;
+    --gallery-img-gap: 20px;
+    --panel-pad: 20px;
+    --pricing-gap: 30px;
+    --pricing-body-gap: 20px;
+    --cost-col-gap: 20px;
+    --cost-note-radius: 6px;
+    --gallery-gap: 20px;
+    --thumbs-pad: 10px;
+    --thumbs-gap: 10px;
+    --thumb-radius: 6px;
+    --gallery-controls-pad: 8px;
+    --card-gap-lg: 20px;
+    --specs-pt: 20px;
+    --specs-gap: 20px;
+    --spec-gap: 6px;
+    --amenity-py: 10px;
+    --amenity-px: 12px;
+    --amenities-gap: 18px;
+    --note-py: 24px;
+    --note-px: 20px;
+    --note-gap: 10px;
+    --note-radius: 8px;
+    --cost-space: 20px;
+    --cost-gap: 10px;
+    --cost-note-py: 6px;
+    --cost-note-px: 12px;
+
+    --tabs-radius: 8px;
+    --office-gap: 30px;
+    --office-radius: 10px;
+    --office-gallery-pad: 24px;
+    --service-pad: 24px;
+    --service-gap: 20px;
+    --investments-intro-gap: 30px;
+    --promo-pattern-top: -432px;
+    --promo-pattern-left: -322px;
+    --promo-pattern-w: 1422px;
+    --promo-pattern-h: 950px;
+    --stacked-pattern-top: -447px;
+    --stacked-pattern-left: -322px;
+    --stacked-pattern-w: 1422px;
+    --stacked-pattern-h: 950px;
+    --offices-gap: 30px;
+    --office-pad: 24px;
+    --gallery-pattern-top: -85px;
+    --gallery-pattern-left: -662px;
+    --gallery-pattern-w: 1102px;
+    --gallery-pattern-h: 736px;
+    --cta-pattern-left-top: -109px;
+    --cta-pattern-left-left: 263px;
+    --cta-pattern-left-w: 522px;
+    --cta-pattern-left-h: 284px;
+    --cta-pattern-left-transform: rotate(90deg);
+    --cta-pattern-right-top: 228px;
+    --cta-pattern-right-w: 398px;
+    --cta-pattern-right-h: 217px;
+    --cta-pattern-right-overflow: 50px;
+
+    --cta-py: 50px;
+    --footer-py: 50px;
+    --cta-text-gap: 6px;
+    --footer-brand-gap: 20px;
+    --footer-col-gap: 16px;
+    --footer-list-gap: 8px;
+    --footer-bar-py: 20px;
+    --footer-legal-gap: 10px;
+    --footer-legal-py: 0px;
+    --social-btn: 60px;
+    --social-icon: 20px;
+    --social-gap: 8px;
+    --social-py: 0px;
+  }
+}

@@ -1,0 +1,190 @@
+<!-- {"title": "Contact Us — Get in Touch with Estatein", "description": "Get in touch with Estatein. Send us a message, call +1 (123) 456-7890, email info@estatein.com or visit one of our offices in Metropolis.", "nav": "contact"} -->
+<!-- @include head -->
+<body class="page-contact">
+<!-- @include header -->
+
+<main id="main">
+  <section class="page-hero page-hero--strip" aria-labelledby="page-title">
+    <div class="page-hero__inner">
+      <div class="container page-hero__text">
+        <h1 class="section-title" id="page-title">Get in Touch with Estatein</h1>
+        <p class="section-copy">Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have.<span class="hide-mobile"> Whether you're looking to buy or sell a property, explore investment opportunities, or simply want to connect, we're just a message away. Reach out to us, and let's start a conversation.</span></p>
+      </div>
+    </div>
+
+    <ul class="feature-strip" aria-label="Ways to reach us">
+      <li class="feature-tile">
+        <a class="feature-tile__link" href="mailto:info@estatein.com">
+          <span class="icon-ring"><span class="icon-ring__inner"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#contact-mail"></use></svg></span></span>
+          <span class="feature-tile__title">info@estatein.com</span>
+          <svg class="icon feature-tile__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#tile-arrow"></use></svg>
+        </a>
+      </li>
+      <li class="feature-tile">
+        <a class="feature-tile__link" href="tel:+11234567890">
+          <span class="icon-ring"><span class="icon-ring__inner"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#contact-phone"></use></svg></span></span>
+          <span class="feature-tile__title">+1 (123) 456-7890</span>
+          <svg class="icon feature-tile__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#tile-arrow"></use></svg>
+        </a>
+      </li>
+      <li class="feature-tile">
+        <a class="feature-tile__link" href="#offices">
+          <span class="icon-ring"><span class="icon-ring__inner"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#contact-location"></use></svg></span></span>
+          <span class="feature-tile__title">Main Headquarters</span>
+          <svg class="icon feature-tile__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#tile-arrow"></use></svg>
+        </a>
+      </li>
+      <li class="feature-tile feature-tile--static">
+        <span class="icon-ring"><span class="icon-ring__inner"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#contact-social"></use></svg></span></span>
+        <span class="feature-tile__title feature-tile__links">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+        </span>
+        <svg class="icon feature-tile__arrow" aria-hidden="true"><use href="assets/icons/sprite.svg#tile-arrow"></use></svg>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact-form" aria-labelledby="connect-title">
+    <div class="container">
+      <div class="section-head section-head--narrow">
+        <div class="section-head__text">
+          <svg class="sparkles" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles"></use></svg>
+          <h2 class="section-title" id="connect-title">Let's Connect</h2>
+          <p class="section-copy">We're excited to connect with you and learn more about your real estate goals. Use the form below to get in touch with Estatein.<span class="hide-mobile"> Whether you're a prospective client, partner, or simply curious about our services, we're here to answer your questions and provide the assistance you need.</span></p>
+        </div>
+      </div>
+
+      <form class="form-card form-card--wide form-card--contact" action="#" method="post" data-form="contact" novalidate>
+        <div class="form-grid form-grid--3">
+          <div class="field">
+            <label class="field__label" for="c-first-name">First Name</label>
+            <input class="field__control" id="c-first-name" name="first_name" type="text" placeholder="Enter First Name" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="c-last-name">Last Name</label>
+            <input class="field__control" id="c-last-name" name="last_name" type="text" placeholder="Enter Last Name" autocomplete="family-name" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="c-email">Email</label>
+            <input class="field__control" id="c-email" name="email" type="email" placeholder="Enter your Email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="c-phone">Phone</label>
+            <input class="field__control" id="c-phone" name="phone" type="tel" placeholder="Enter Phone Number" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label class="field__label" for="c-inquiry">Inquiry Type</label>
+            <div class="field__select">
+              <select class="field__control" id="c-inquiry" name="inquiry_type">
+                <option value="" selected>Select Inquiry Type</option>
+                <option>Buying a Property</option>
+                <option>Selling a Property</option>
+                <option>Property Management</option>
+                <option>Investment Advisory</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="c-source">How Did You Hear About Us?</label>
+            <div class="field__select">
+              <select class="field__control" id="c-source" name="source">
+                <option value="" selected>Select</option>
+                <option>Instagram</option>
+                <option>LinkedIn</option>
+                <option>Facebook</option>
+                <option>Referral</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="c-message">Message</label>
+          <textarea class="field__control field__control--area" id="c-message" name="message" placeholder="Enter your Message here.." rows="5" required></textarea>
+        </div>
+
+        <!-- @include form-submit -->
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="offices" aria-labelledby="offices-title">
+    <div class="container">
+      <div class="section-head section-head--narrow">
+        <div class="section-head__text">
+          <svg class="sparkles" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles"></use></svg>
+          <h2 class="section-title" id="offices-title">Discover Our Office Locations</h2>
+          <p class="section-copy">Estatein is here to serve you across multiple locations. Whether you're looking to meet our team<span class="hide-mobile">, discuss real estate opportunities, or simply drop by for a chat, we have offices conveniently located to serve your needs. Explore the categories below to find the Estatein office nearest to you</span><span class="only-mobile">.</span></p>
+        </div>
+      </div>
+
+      <div class="offices" data-tabs>
+        <div class="tabs" role="tablist" aria-label="Filter offices">
+          <button class="tabs__btn" type="button" role="tab" aria-selected="true" data-tab="all">All</button>
+          <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-tab="regional">Regional</button>
+          <button class="tabs__btn" type="button" role="tab" aria-selected="false" data-tab="international">International</button>
+        </div>
+        <ul class="offices__grid" role="tabpanel" aria-label="Offices">
+          <li class="office-card" data-tab-item="all headquarters">
+            <div class="office-card__text">
+              <p class="office-card__type">Main Headquarters</p>
+              <h3 class="office-card__address">123 Estatein Plaza, City Center, Metropolis</h3>
+              <p class="office-card__copy">Our main headquarters serve as the heart of Estatein. Located in the bustling city center, this is where our core team of experts operates, driving the excellence and innovation that define us.</p>
+            </div>
+            <ul class="office-card__contacts">
+              <li><a class="pill" href="mailto:info@estatein.com"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#mail-solid"></use></svg>info@estatein.com</a></li>
+              <li><a class="pill" href="tel:+11234567890"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#phone"></use></svg>+1 (123) 456-7890</a></li>
+              <li><span class="pill"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#pin"></use></svg>Metropolis</span></li>
+            </ul>
+            <a class="btn btn--primary btn--block btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=123+Estatein+Plaza%2C+City+Center%2C+Metropolis" target="_blank" rel="noopener">Get Direction</a>
+          </li>
+          <li class="office-card" data-tab-item="all regional">
+            <div class="office-card__text">
+              <p class="office-card__type">Regional Offices</p>
+              <h3 class="office-card__address">456 Urban Avenue, Downtown District, Metropolis</h3>
+              <p class="office-card__copy">Estatein's presence extends to multiple regions, each with its own dynamic real estate landscape. Discover our regional offices, staffed by local experts who understand the nuances of their respective markets.</p>
+            </div>
+            <ul class="office-card__contacts">
+              <li><a class="pill" href="mailto:info@restatein.com"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#mail-solid"></use></svg>info@restatein.com</a></li>
+              <li><a class="pill" href="tel:+11236287890"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#phone"></use></svg>+1 (123) 628-7890</a></li>
+              <li><span class="pill"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#pin"></use></svg>Metropolis</span></li>
+            </ul>
+            <a class="btn btn--primary btn--block btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=456+Urban+Avenue%2C+Downtown+District%2C+Metropolis" target="_blank" rel="noopener">Get Direction</a>
+          </li>
+        </ul>
+        <p class="offices__empty" data-tab-empty hidden>There are no international offices to show yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="office-gallery">
+        <div class="office-gallery__pattern" aria-hidden="true"></div>
+        <div class="office-gallery__grid">
+          <img class="office-gallery__img office-gallery__img--a" src="{{src:office-gallery-01:760}}" srcset="{{srcset:office-gallery-01}}" sizes="(min-width: 768px) 37vw, 90vw" width="709" height="236" alt="Estatein office workspace with desks and monitors" loading="lazy" decoding="async">
+          <img class="office-gallery__img office-gallery__img--b" src="{{src:office-gallery-02:760}}" srcset="{{srcset:office-gallery-02}}" sizes="(min-width: 768px) 37vw, 90vw" width="709" height="236" alt="Team members collaborating around a table" loading="lazy" decoding="async">
+          <img class="office-gallery__img office-gallery__img--c" src="{{src:office-gallery-03:760}}" srcset="{{srcset:office-gallery-03}}" sizes="(min-width: 768px) 37vw, 90vw" width="709" height="236" alt="Estatein team portrait" loading="lazy" decoding="async">
+          <img class="office-gallery__img office-gallery__img--d" src="{{src:office-gallery-04:360}}" srcset="{{srcset:office-gallery-04}}" sizes="(min-width: 768px) 18vw, 44vw" width="344" height="236" alt="Estatein agents in business suits" loading="lazy" decoding="async">
+          <img class="office-gallery__img office-gallery__img--e" src="{{src:office-gallery-05:360}}" srcset="{{srcset:office-gallery-05}}" sizes="(min-width: 768px) 18vw, 44vw" width="344" height="236" alt="Smiling Estatein team members" loading="lazy" decoding="async">
+        </div>
+        <div class="office-gallery__footer">
+          <div class="office-gallery__text">
+            <svg class="sparkles" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles-surface"></use></svg>
+            <h2 class="section-title" id="gallery-title">Explore Estatein's World</h2>
+            <p class="section-copy">Step inside the world of Estatein, where professionalism meets warmth, and expertise meets passion. Our gallery offers a glimpse into our team and workspaces, inviting you to get to know us better.</p>
+          </div>
+          <img class="office-gallery__img office-gallery__img--f" src="{{src:office-gallery-06:760}}" srcset="{{srcset:office-gallery-06}}" sizes="(min-width: 768px) 37vw, 90vw" width="709" height="280" alt="An agent shaking hands with a client" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- @include footer -->
+</body>
+</html>

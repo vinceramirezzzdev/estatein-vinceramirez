@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Properties — Find Your Dream Property | Estatein</title>
+  <meta name="description" content="Explore Estatein's curated selection of properties, each offering a unique story and a chance to redefine your life. Search by location, type, price, size and build year.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://estatein-vinceramirez.vercel.app/properties.html">
+  <meta name="theme-color" content="#141414">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Estatein">
+  <meta property="og:title" content="Properties — Find Your Dream Property | Estatein">
+  <meta property="og:description" content="Explore Estatein's curated selection of properties, each offering a unique story and a chance to redefine your life. Search by location, type, price, size and build year.">
+  <meta property="og:url" content="https://estatein-vinceramirez.vercel.app/properties.html">
+  <meta property="og:image" content="https://estatein-vinceramirez.vercel.app/assets/images/hero-buildings-1080.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/urbanist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.min.css?v=d9bf106a">
+  <script src="assets/js/vendor/gsap.min.js" defer></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/main.min.js?v=0bf49f69" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://estatein-vinceramirez.vercel.app/#organization","name":"Estatein","url":"https://estatein-vinceramirez.vercel.app/","logo":"https://estatein-vinceramirez.vercel.app/assets/icons/favicon.svg","email":"info@estatein.com","telephone":"+1 (123) 456-7890"}]}</script>
+</head>
+
+<body class="page-properties">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="banner" data-banner>
+    <div class="banner__pattern" aria-hidden="true"></div>
+    <p class="banner__text">
+      <span>✨Discover Your Dream Property with Estatein</span>
+      <a class="banner__link" href="properties.html">Learn More</a>
+    </p>
+    <button class="banner__close" type="button" aria-label="Dismiss announcement" data-banner-close>
+      <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#close"></use></svg>
+    </button>
+  </div>
+
+  <div class="navbar">
+    <div class="navbar__inner">
+      <a class="navbar__logo" href="index.html" aria-label="Estatein — home">
+        <svg class="logo" aria-hidden="true"><use href="assets/icons/sprite.svg#logo"></use></svg>
+      </a>
+
+      <nav class="navbar__nav" id="site-nav" aria-label="Primary">
+        <ul class="navbar__menu">
+          <li><a class="navbar__link" href="index.html">Home</a></li>
+          <li><a class="navbar__link" href="about.html">About Us</a></li>
+          <li><a class="navbar__link" href="properties.html" aria-current="page">Properties</a></li>
+          <li><a class="navbar__link" href="services.html">Services</a></li>
+        </ul>
+        <a class="btn btn--darker navbar__cta" href="contact.html">Contact Us</a>
+      </nav>
+
+      <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="visually-hidden">Menu</span>
+        <svg class="icon icon--menu" aria-hidden="true"><use href="assets/icons/sprite.svg#menu"></use></svg>
+        <svg class="icon icon--close" aria-hidden="true"><use href="assets/icons/sprite.svg#close"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<main id="main">
+  <section class="page-hero page-hero--search" aria-labelledby="page-title">
+    <div class="page-hero__inner">
+      <div class="container page-hero__text">
+        <h1 class="section-title" id="page-title">Find Your Dream Property</h1>
+        <p class="section-copy">Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey</p>
+      </div>
+    </div>
+  </section>
+
+  <form class="property-search" id="search" role="search" action="properties.html#portfolio" method="get" data-property-search>
+    <div class="property-search__bar">
+      <label class="visually-hidden" for="search-keyword">Search for a property</label>
+      <input class="property-search__input" id="search-keyword" type="search" name="keyword" placeholder="Search For A Property" autocomplete="off">
+      <button class="btn btn--primary property-search__btn" type="submit">
+        <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#search"></use></svg>
+        <span class="property-search__btn-label">Find Property</span>
+      </button>
+    </div>
+    <div class="property-search__filters">
+      <div class="filter">
+        <svg class="icon filter__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#location"></use></svg>
+        <label class="visually-hidden" for="filter-location">Location</label>
+        <select class="filter__select" id="filter-location" name="location">
+          <option value="">Location</option>
+          <option value="malibu-california">Malibu, California</option>
+        </select>
+        <span class="filter__chevron" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#chevron-down"></use></svg></span>
+      </div>
+      <div class="filter">
+        <svg class="icon filter__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#property-type"></use></svg>
+        <label class="visually-hidden" for="filter-type">Property Type</label>
+        <select class="filter__select" id="filter-type" name="type">
+          <option value="">Property Type</option>
+          <option value="coastal-escapes">Coastal Escapes</option>
+          <option value="urban-oasis">Urban Oasis</option>
+          <option value="countryside-charm">Countryside Charm</option>
+        </select>
+        <span class="filter__chevron" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#chevron-down"></use></svg></span>
+      </div>
+      <div class="filter">
+        <svg class="icon filter__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#pricing"></use></svg>
+        <label class="visually-hidden" for="filter-price">Pricing Range</label>
+        <select class="filter__select" id="filter-price" name="price">
+          <option value="">Pricing Range</option>
+          <option value="0-500000">Up to $500,000</option>
+          <option value="500000-1000000">$500,000 – $1,000,000</option>
+          <option value="1000000-">$1,000,000+</option>
+        </select>
+        <span class="filter__chevron" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#chevron-down"></use></svg></span>
+      </div>
+      <div class="filter">
+        <svg class="icon filter__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#size"></use></svg>
+        <label class="visually-hidden" for="filter-size">Property Size</label>
+        <select class="filter__select" id="filter-size" name="size">
+          <option value="">Property Size</option>
+          <option value="0-2000">Up to 2,000 Square Feet</option>
+          <option value="2000-">2,000+ Square Feet</option>
+        </select>
+        <span class="filter__chevron" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#chevron-down"></use></svg></span>
+      </div>
+      <div class="filter">
+        <svg class="icon filter__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#calendar"></use></svg>
+        <label class="visually-hidden" for="filter-year">Build Year</label>
+        <select class="filter__select" id="filter-year" name="year">
+          <option value="">Build Year</option>
+        </select>
+        <span class="filter__chevron" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#chevron-down"></use></svg></span>
+      </div>
+    </div>
+  </form>
+
+  <section class="section" id="portfolio" aria-labelledby="portfolio-title">
+    <div class="container">
+      <div class="section-head section-head--wide">
+        <div class="section-head__text">
+          <svg class="sparkles" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles"></use></svg>
+          <h2 class="section-title" id="portfolio-title">Discover a World of Possibilities</h2>
+          <p class="section-copy">Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home</p>
+        </div>
+      </div>
+
+      <div class="carousel" data-carousel data-carousel-total="10" data-property-results>
+        <ul class="carousel__track" data-carousel-track>
+          <li class="carousel__slide" data-property data-title="Seaside Serenity Villa" data-location="malibu-california" data-type="coastal-escapes" data-price="1250000" data-size="2500">
+            <article class="property-card property-card--listing">
+              <img class="property-card__img" src="assets/images/seaside-serenity-villa-480.webp" srcset="assets/images/seaside-serenity-villa-360.webp 360w, assets/images/seaside-serenity-villa-480.webp 480w, assets/images/seaside-serenity-villa-720.webp 720w, assets/images/seaside-serenity-villa-1060.webp 1060w" sizes="(min-width: 1440px) 432px, (min-width: 768px) 40vw, 90vw" width="432" height="318" alt="Seaside Serenity Villa — white modern villa with a swimming pool" loading="lazy" decoding="async">
+              <div class="property-card__body">
+                <div class="property-card__intro">
+                  <p class="tag tag--category">Coastal Escapes - Where Waves Beckon</p>
+                  <div class="property-card__text">
+                    <h3 class="property-card__title">Seaside Serenity Villa</h3>
+                    <p class="property-card__excerpt">Wake up to the soothing melody of waves. This beachfront villa offers... <a href="property-details.html">Read More</a></p>
+                  </div>
+                </div>
+                <div class="property-card__footer">
+                  <p class="price"><span class="price__label">Price</span> <span class="price__value">$1,250,000</span></p>
+                  <a class="btn btn--primary property-card__btn" href="property-details.html">View Property Details</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="carousel__slide" data-property data-title="Metropolitan Haven" data-type="urban-oasis" data-price="650000">
+            <article class="property-card property-card--listing">
+              <img class="property-card__img" src="assets/images/metropolitan-haven-480.webp" srcset="assets/images/metropolitan-haven-360.webp 360w, assets/images/metropolitan-haven-480.webp 480w, assets/images/metropolitan-haven-626.webp 626w" sizes="(min-width: 1440px) 432px, (min-width: 768px) 40vw, 90vw" width="432" height="318" alt="Metropolitan Haven — city apartment towers behind a green park" loading="lazy" decoding="async">
+              <div class="property-card__body">
+                <div class="property-card__intro">
+                  <p class="tag tag--category">Urban Oasis - Life in the Heart of the City</p>
+                  <div class="property-card__text">
+                    <h3 class="property-card__title">Metropolitan Haven</h3>
+                    <p class="property-card__excerpt">Immerse yourself in the energy of the city. This modern apartment in the heart... <a href="property-details.html">Read More</a></p>
+                  </div>
+                </div>
+                <div class="property-card__footer">
+                  <p class="price"><span class="price__label">Price</span> <span class="price__value">$650,000</span></p>
+                  <a class="btn btn--primary property-card__btn" href="property-details.html">View Property Details</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="carousel__slide" data-property data-title="Rustic Retreat Cottage" data-type="countryside-charm" data-price="350000">
+            <article class="property-card property-card--listing">
+              <img class="property-card__img" src="assets/images/rustic-retreat-cottage-480.webp" srcset="assets/images/rustic-retreat-cottage-360.webp 360w, assets/images/rustic-retreat-cottage-480.webp 480w, assets/images/rustic-retreat-cottage-740.webp 740w" sizes="(min-width: 1440px) 432px, (min-width: 768px) 40vw, 90vw" width="432" height="318" alt="Rustic Retreat Cottage — glass skyscrapers at dusk" loading="lazy" decoding="async">
+              <div class="property-card__body">
+                <div class="property-card__intro">
+                  <p class="tag tag--category">Countryside Charm - Escape to Nature's Embrace</p>
+                  <div class="property-card__text">
+                    <h3 class="property-card__title">Rustic Retreat Cottage</h3>
+                    <p class="property-card__excerpt">Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills... <a href="property-details.html">Read More</a></p>
+                  </div>
+                </div>
+                <div class="property-card__footer">
+                  <p class="price"><span class="price__label">Price</span> <span class="price__value">$350,000</span></p>
+                  <a class="btn btn--primary property-card__btn" href="property-details.html">View Property Details</a>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+        <p class="property-search__empty" data-property-empty hidden>No properties match your search. Try a different keyword or clear a filter.</p>
+        <div class="carousel__footer">
+          <p class="carousel__count" aria-live="polite"><span class="carousel__current" data-carousel-current>01</span> of <span data-carousel-count>10</span></p>
+          <div class="carousel__controls">
+            <button class="arrow-btn" type="button" data-carousel-prev aria-label="Previous slide" disabled>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-left"></use></svg>
+            </button>
+            <button class="arrow-btn" type="button" data-carousel-next aria-label="Next slide">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-right"></use></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inquiry" aria-labelledby="inquiry-title">
+    <div class="container">
+      <div class="section-head section-head--narrow">
+        <div class="section-head__text">
+          <svg class="sparkles" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles"></use></svg>
+          <h2 class="section-title" id="inquiry-title">Let's Make it Happen</h2>
+          <p class="section-copy">Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.</p>
+        </div>
+      </div>
+
+      <form class="form-card form-card--wide" action="#" method="post" data-form="property-inquiry" novalidate>
+        <div class="form-grid form-grid--4">
+          <div class="field">
+            <label class="field__label" for="pi-first-name">First Name</label>
+            <input class="field__control" id="pi-first-name" name="first_name" type="text" placeholder="Enter First Name" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="pi-last-name">Last Name</label>
+            <input class="field__control" id="pi-last-name" name="last_name" type="text" placeholder="Enter Last Name" autocomplete="family-name" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="pi-email">Email</label>
+            <input class="field__control" id="pi-email" name="email" type="email" placeholder="Enter your Email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="pi-phone">Phone</label>
+            <input class="field__control" id="pi-phone" name="phone" type="tel" placeholder="Enter Phone Number" autocomplete="tel">
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="pi-location">Preferred Location</label>
+            <div class="field__select">
+              <select class="field__control" id="pi-location" name="location">
+                <option value="" selected>Select Location</option>
+                <option>Malibu, California</option>
+                <option>Metropolis</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="pi-type">Property Type</label>
+            <div class="field__select">
+              <select class="field__control" id="pi-type" name="property_type">
+                <option value="" selected>Select Property Type</option>
+                <option>Coastal Escapes</option>
+                <option>Urban Oasis</option>
+                <option>Countryside Charm</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="pi-bathrooms">No. of Bathrooms</label>
+            <div class="field__select">
+              <select class="field__control" id="pi-bathrooms" name="bathrooms">
+                <option value="" selected>Select no. of Bathrooms</option>
+                <option>1</option><option>2</option><option>3</option><option>4+</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="pi-bedrooms">No. of Bedrooms</label>
+            <div class="field__select">
+              <select class="field__control" id="pi-bedrooms" name="bedrooms">
+                <option value="" selected>Select no. of Bedrooms</option>
+                <option>1</option><option>2</option><option>3</option><option>4+</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid form-grid--2">
+          <div class="field">
+            <label class="field__label" for="pi-budget">Budget</label>
+            <div class="field__select">
+              <select class="field__control" id="pi-budget" name="budget">
+                <option value="" selected>Select Budget</option>
+                <option>Up to $500,000</option>
+                <option>$500,000 – $1,000,000</option>
+                <option>$1,000,000+</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#chevron-down"></use></svg>
+            </div>
+          </div>
+          <fieldset class="field">
+            <legend class="field__label">Preferred Contact Method</legend>
+            <div class="contact-methods">
+              <label class="contact-method">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#phone"></use></svg>
+                <input class="contact-method__input" type="tel" name="contact_phone" placeholder="Enter Your Number" aria-label="Your phone number" autocomplete="tel">
+                <input class="contact-method__radio" type="radio" name="contact_method" value="phone" checked aria-label="Contact me by phone">
+              </label>
+              <label class="contact-method">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#mail-solid"></use></svg>
+                <input class="contact-method__input" type="email" name="contact_email" placeholder="Enter Your Email" aria-label="Your email address" autocomplete="email">
+                <input class="contact-method__radio" type="radio" name="contact_method" value="email" aria-label="Contact me by email">
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="pi-message">Message</label>
+          <textarea class="field__control field__control--area" id="pi-message" name="message" placeholder="Enter your Message here.." rows="5"></textarea>
+        </div>
+
+        <div class="form-card__footer">
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" name="agree" value="1" required>
+            <span class="checkbox__box" aria-hidden="true"></span>
+            <span class="checkbox__label">I agree with <a href="terms.html">Terms of Use</a> and <a href="terms.html">Privacy Policy</a></span>
+          </label>
+          <button class="btn btn--primary btn--submit" type="submit">Send Your Message</button>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+
+      </form>
+    </div>
+  </section>
+</main>
+
+<section class="cta" aria-labelledby="cta-title">
+  <div class="cta__pattern cta__pattern--left" aria-hidden="true"></div>
+  <div class="cta__pattern cta__pattern--right" aria-hidden="true"></div>
+  <div class="container cta__inner">
+    <div class="cta__text">
+      <h2 class="cta__title" id="cta-title">Start Your Real Estate Journey Today</h2>
+      <p class="cta__copy">Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice, Estatein is here to assist you every step of the way. Take the first step towards your real estate goals and explore our available properties or get in touch with our team for personalized assistance.</p>
+    </div>
+    <a class="btn btn--primary cta__btn" href="properties.html">Explore Properties</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container site-footer__main">
+    <div class="site-footer__brand">
+      <a class="site-footer__logo" href="index.html" aria-label="Estatein — home">
+        <svg class="logo logo--footer" aria-hidden="true"><use href="assets/icons/sprite.svg#logo"></use></svg>
+      </a>
+      <form class="newsletter" action="#" method="post" data-form="newsletter" novalidate>
+        <label class="visually-hidden" for="newsletter-email">Email address</label>
+        <svg class="icon newsletter__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#mail"></use></svg>
+        <input class="newsletter__input" id="newsletter-email" type="email" name="email" placeholder="Enter Your Email" autocomplete="email" required>
+        <button class="newsletter__submit" type="submit" aria-label="Subscribe">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#send"></use></svg>
+        </button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <nav class="site-footer__links" aria-label="Footer">
+      <div class="footer-col">
+        <h2 class="footer-col__title">Home</h2>
+        <ul class="footer-col__list">
+          <li><a href="index.html#hero">Hero Section</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#featured-properties">Properties</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="index.html#faqs">FAQ’s</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-col__title">About Us</h2>
+        <ul class="footer-col__list">
+          <li><a href="about.html#our-story">Our Story</a></li>
+          <li><a href="about.html#our-works">Our Works</a></li>
+          <li><a href="about.html#how-it-works">How It Works</a></li>
+          <li><a href="about.html#our-team">Our Team</a></li>
+          <li><a href="about.html#our-clients">Our Clients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-col__title">Properties</h2>
+        <ul class="footer-col__list">
+          <li><a href="properties.html#portfolio">Portfolio</a></li>
+          <li><a href="properties.html#search">Categories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-col__title">Services</h2>
+        <ul class="footer-col__list">
+          <li><a href="services.html#valuation-mastery">Valuation Mastery</a></li>
+          <li><a href="services.html#strategic-marketing">Strategic Marketing</a></li>
+          <li><a href="services.html#negotiation-wizardry">Negotiation Wizardry</a></li>
+          <li><a href="services.html#closing-success">Closing Success</a></li>
+          <li><a href="services.html#property-management">Property Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-col__title">Contact Us</h2>
+        <ul class="footer-col__list">
+          <li><a href="contact.html#contact-form">Contact Form</a></li>
+          <li><a href="contact.html#offices">Our Offices</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="site-footer__bar">
+    <div class="container site-footer__bar-inner">
+      <div class="site-footer__legal">
+        <p>@2023 Estatein. All Rights Reserved.</p>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+      <ul class="social" aria-label="Estatein on social media">
+        <li><a class="social__link" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#facebook"></use></svg></a></li>
+        <li><a class="social__link" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#linkedin"></use></svg></a></li>
+        <li><a class="social__link" href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#twitter"></use></svg></a></li>
+        <li><a class="social__link" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#youtube"></use></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!-- {"title": "Estatein — Discover Your Dream Property", "description": "Your journey to finding the perfect property begins here. Explore Estatein's listings to find the home that matches your dreams.", "nav": "home"} -->
+<!-- @include head -->
+<body class="page-home">
+<!-- @include header -->
+
+<main id="main">
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero__grid">
+      <div class="hero__content">
+        <div class="hero__text">
+          <h1 class="hero__title" id="hero-title">Discover Your Dream Property with Estatein</h1>
+          <p class="hero__copy">Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.</p>
+          <a class="hero-badge" href="properties.html" aria-label="Discover your dream property">
+            <svg class="hero-badge__ring" viewBox="0 0 144 144" aria-hidden="true">
+              <defs><path id="hero-badge-path" d="M72,130 A58,58 0 1,1 72,14 A58,58 0 1,1 72,130"></path></defs>
+              <text textLength="364" lengthAdjust="spacing"><textPath href="#hero-badge-path" textLength="364" lengthAdjust="spacing">✨Discover Your Dream Property </textPath></text>
+            </svg>
+            <span class="hero-badge__core">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#arrow-up-right"></use></svg>
+            </span>
+          </a>
+        </div>
+        <div class="hero__actions">
+          <a class="btn btn--outline" href="about.html">Learn More</a>
+          <a class="btn btn--primary" href="properties.html">Browse Properties</a>
+        </div>
+        <ul class="stats">
+          <li class="stat"><strong class="stat__value">200+</strong><span class="stat__label">Happy Customers</span></li>
+          <li class="stat"><strong class="stat__value">10k+</strong><span class="stat__label">Properties For Clients</span></li>
+          <li class="stat"><strong class="stat__value">16+</strong><span class="stat__label">Years of Experience</span></li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <div class="hero__pattern" aria-hidden="true"></div>
+        <img class="hero__img" src="{{src:hero-buildings:1080}}" srcset="{{srcset:hero-buildings}}" sizes="(min-width: 768px) 48vw, 100vw" width="920" height="814" alt="Modern blue glass high-rise buildings" fetchpriority="high">
+      </div>
+    </div>
+
+    <!-- @include feature-strip -->
+  </section>
+
+  <section class="section" id="featured-properties" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__text">
+          <svg class="sparkles" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles"></use></svg>
+          <h2 class="section-title" id="featured-title">Featured Properties</h2>
+          <p class="section-copy">Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.<span class="hide-mobile"> Click "View Details" for more information.</span></p>
+        </div>
+        <a class="btn btn--dark section-head__btn" href="properties.html">View All Properties</a>
+      </div>
+
+      <div class="carousel" data-carousel data-carousel-total="60">
+        <ul class="carousel__track" data-carousel-track>
+          <li class="carousel__slide">
+            <article class="property-card">
+              <img class="property-card__img" src="{{src:seaside-serenity-villa:480}}" srcset="{{srcset:seaside-serenity-villa}}" sizes="(min-width: 1440px) 432px, (min-width: 768px) 40vw, 90vw" width="432" height="318" alt="Seaside Serenity Villa — white modern villa with a swimming pool" loading="lazy" decoding="async">
+              <div class="property-card__body">
+                <div class="property-card__text">
+                  <h3 class="property-card__title">Seaside Serenity Villa</h3>
+                  <p class="property-card__excerpt">A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood... <a href="property-details.html">Read More</a></p>
+                </div>
+                <ul class="tags" aria-label="Property features">
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bed"></use></svg>4-Bedroom</li>
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bath"></use></svg>3-Bathroom</li>
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#villa"></use></svg>Villa</li>
+                </ul>
+                <div class="property-card__footer">
+                  <p class="price"><span class="price__label">Price</span> <span class="price__value">$550,000</span></p>
+                  <a class="btn btn--primary property-card__btn" href="property-details.html">View Property Details</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="carousel__slide">
+            <article class="property-card">
+              <img class="property-card__img" src="{{src:metropolitan-haven:480}}" srcset="{{srcset:metropolitan-haven}}" sizes="(min-width: 1440px) 432px, (min-width: 768px) 40vw, 90vw" width="432" height="318" alt="Metropolitan Haven — city apartment towers behind a green park" loading="lazy" decoding="async">
+              <div class="property-card__body">
+                <div class="property-card__text">
+                  <h3 class="property-card__title">Metropolitan Haven</h3>
+                  <p class="property-card__excerpt">A chic and fully-furnished 2-bedroom apartment with panoramic city views... <a href="property-details.html">Read More</a></p>
+                </div>
+                <ul class="tags" aria-label="Property features">
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bed"></use></svg>2-Bedroom</li>
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bath"></use></svg>2-Bathroom</li>
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#villa"></use></svg>Villa</li>
+                </ul>
+                <div class="property-card__footer">
+                  <p class="price"><span class="price__label">Price</span> <span class="price__value">$550,000</span></p>
+                  <a class="btn btn--primary property-card__btn" href="property-details.html">View Property Details</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="carousel__slide">
+            <article class="property-card">
+              <img class="property-card__img" src="{{src:rustic-retreat-cottage:480}}" srcset="{{srcset:rustic-retreat-cottage}}" sizes="(min-width: 1440px) 432px, (min-width: 768px) 40vw, 90vw" width="432" height="318" alt="Rustic Retreat Cottage — glass skyscrapers at dusk" loading="lazy" decoding="async">
+              <div class="property-card__body">
+                <div class="property-card__text">
+                  <h3 class="property-card__title">Rustic Retreat Cottage</h3>
+                  <p class="property-card__excerpt">An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community... <a href="property-details.html">Read More</a></p>
+                </div>
+                <ul class="tags" aria-label="Property features">
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bed"></use></svg>3-Bedroom</li>
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#bath"></use></svg>3-Bathroom</li>
+                  <li class="tag"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#villa"></use></svg>Villa</li>
+                </ul>
+                <div class="property-card__footer">
+                  <p class="price"><span class="price__label">Price</span> <span class="price__value">$550,000</span></p>
+                  <a class="btn btn--primary property-card__btn" href="property-details.html">View Property Details</a>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+        <!-- @include carousel-footer-properties -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__text">
+          <svg class="sparkles" aria-hidden="true"><use href="assets/icons/sprite.svg#sparkles"></use></svg>
+          <h2 class="section-title" id="testimonials-title">What Our Clients Say</h2>
+          <p class="section-copy">Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.</p>
+        </div>
+        <a class="btn btn--dark section-head__btn" href="testimonials.html">View All Testimonials</a>
+      </div>
+
+      <div class="carousel" data-carousel data-carousel-total="10">
+        <ul class="carousel__track" data-carousel-track>
+          <li class="carousel__slide">
+            <figure class="testimonial-card">
+              <!-- @include stars -->
+              <blockquote class="testimonial-card__quote">
+                <h3 class="testimonial-card__title">Exceptional Service!</h3>
+                <p>Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!</p>
+              </blockquote>
+              <figcaption class="person">
+                <img class="person__avatar" src="{{src:client-wade-warren:120}}" srcset="{{srcset:client-wade-warren}}" sizes="60px" width="60" height="60" alt="" loading="lazy" decoding="async">
+                <span class="person__text"><span class="person__name">Wade Warren</span><span class="person__meta">USA, California</span></span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="carousel__slide">
+            <figure class="testimonial-card">
+              <!-- @include stars -->
+              <blockquote class="testimonial-card__quote">
+                <h3 class="testimonial-card__title">Efficient and Reliable</h3>
+                <p>Estatein provided us with top-notch service. They helped us sell our property quickly and at a great price. We couldn't be happier with the results.</p>
+              </blockquote>
+              <figcaption class="person">
+                <img class="person__avatar" src="{{src:client-emelie-thomson:120}}" srcset="{{srcset:client-emelie-thomson}}" sizes="60px" width="60" height="60" alt="" loading="lazy" decoding="async">
+                <span class="person__text"><span class="person__name">Emelie Thomson</span><span class="person__meta">USA, Florida</span></span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="carousel__slide">
+            <figure class="testimonial-card">
+              <!-- @include stars -->
+              <blockquote class="testimonial-card__quote">
+                <h3 class="testimonial-card__title">Trusted Advisors</h3>
+                <p>The Estatein team guided us through the entire buying process. Their knowledge and commitment to our needs were impressive. Thank you for your support!</p>
+              </blockquote>
+              <figcaption class="person">
+                <img class="person__avatar" src="{{src:client-john-mans:120}}" srcset="{{srcset:client-john-mans}}" sizes="60px" width="60" height="60" alt="" loading="lazy" decoding="async">
+                <span class="person__text"><span class="person__name">John Mans</span><span class="person__meta">USA, Nevada</span></span>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+        <!-- @include carousel-footer-testimonials -->
+      </div>
+    </div>
+  </section>
+
+  <!-- @include faq-section -->
+</main>
+
+<!-- @include footer -->
+</body>
+</html>

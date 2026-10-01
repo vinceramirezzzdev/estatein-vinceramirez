@@ -1,0 +1,220 @@
+/* ==========================================================================
+   Content pages — "View All" grids, blog, legal pages, WordPress core classes.
+   These pages are not drawn in Figma, so they only reuse the design's tokens
+   and components (cards, buttons, page hero).
+   ========================================================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.card-grid > * {
+  min-width: 0;
+}
+
+.container--narrow {
+  max-width: calc(900px + 2 * var(--gutter));
+}
+
+/* Blog cards */
+.post-card__meta {
+  color: var(--c-muted);
+  font-size: var(--fs-ui);
+}
+
+.post-card .property-card__title a:hover {
+  color: var(--c-primary-light);
+}
+
+/* Prose (post / page content, FAQ answers) */
+.entry-content {
+  color: var(--c-muted);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+
+.entry-content > * + * {
+  margin-top: 1em;
+}
+
+.entry-content h2,
+.entry-content h3,
+.entry-content h4 {
+  margin-top: 1.6em;
+  color: var(--c-text);
+}
+
+.entry-content h2 { font-size: var(--fs-h3-xl); }
+.entry-content h3 { font-size: var(--fs-h3); }
+
+.entry-content a {
+  color: var(--c-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.entry-content a:hover {
+  color: var(--c-primary-light);
+}
+
+.entry-content ul,
+.entry-content ol {
+  padding-left: 1.25em;
+  list-style: revert;
+}
+
+.entry-content blockquote {
+  padding: 20px 24px;
+  border-left: 2px solid var(--c-primary);
+  background: var(--c-surface);
+  color: var(--c-text);
+}
+
+.entry-content img {
+  border-radius: 10px;
+}
+
+.entry-thumbnail {
+  margin-bottom: 40px;
+}
+
+.entry-thumbnail img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.entry-tags {
+  margin-top: 30px;
+}
+
+.entry-tags a {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 6px 14px;
+  border: 1px solid var(--c-border);
+  border-radius: 28px;
+  background: var(--c-surface);
+  font-size: var(--fs-ui);
+}
+
+/* Pagination + post navigation */
+.pagination,
+.post-navigation {
+  margin-top: var(--carousel-footer-space);
+  padding-top: var(--carousel-footer-pt);
+  border-top: 1px solid var(--c-border);
+}
+
+.pagination .nav-links,
+.post-navigation .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pagination .page-numbers {
+  display: inline-grid;
+  place-items: center;
+  min-width: var(--arrow-btn);
+  height: var(--arrow-btn);
+  padding: 0 12px;
+  border: 1px solid var(--c-border);
+  border-radius: 100px;
+  background: var(--c-surface);
+  color: var(--c-muted);
+}
+
+.pagination .page-numbers.current {
+  color: var(--c-text);
+  border-color: var(--c-primary);
+}
+
+.post-navigation a {
+  display: grid;
+  gap: 4px;
+  color: var(--c-text);
+}
+
+.post-navigation__label {
+  color: var(--c-muted);
+  font-size: var(--fs-ui);
+}
+
+/* Comments */
+.comments {
+  margin-top: var(--section-space);
+}
+
+.comments__title {
+  margin-bottom: 24px;
+  font-size: var(--fs-h3);
+}
+
+.comments__list,
+.comments__list .children {
+  display: grid;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.comments__list .comment-body {
+  padding: 24px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.comment-form {
+  display: grid;
+  gap: 16px;
+}
+
+.comment-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.comment-form input[type='text'],
+.comment-form input[type='email'],
+.comment-form input[type='url'],
+.comment-form textarea {
+  width: 100%;
+  padding: 15px 19px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--input-radius);
+  color: var(--c-text);
+}
+
+/* Search form (blog, 404) */
+.search-form {
+  border-radius: var(--radius);
+}
+
+/* WordPress core classes */
+.alignleft { float: left; margin: 0 24px 16px 0; }
+.alignright { float: right; margin: 0 0 16px 24px; }
+.aligncenter { display: block; margin-inline: auto; }
+.wp-caption { max-width: 100%; }
+.wp-caption-text,
+.gallery-caption { color: var(--c-muted); font-size: 0.875em; }
+.screen-reader-text { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.sticky .property-card,
+.bypostauthor > .comment-body { border-color: var(--c-primary); }
+
+@media (max-width: 1199px) {
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

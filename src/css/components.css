@@ -1,0 +1,495 @@
+/* ==========================================================================
+   Shared components — cards, stats, tags, carousel, icon rings
+   ========================================================================== */
+
+/* Stat tiles ("200+ Happy Customers") */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--stats-gap);
+}
+
+.stat {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+  padding: calc(var(--stat-py) - 1px) calc(var(--stat-px) - 1px);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.stats--roomy {
+  gap: var(--stats-roomy-gap);
+}
+
+.stats--roomy .stat {
+  padding: calc(var(--stat-roomy-py) - 1px) calc(var(--stat-roomy-px) - 1px);
+}
+
+.stat__value {
+  font-size: var(--fs-stat);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.stat__label {
+  color: var(--c-muted);
+  font-size: var(--fs-body);
+}
+
+/* Icon inside a double gradient ring (feature tiles, service cards) */
+.icon-ring,
+.icon-ring__inner {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+}
+
+.icon-ring {
+  width: var(--ring-outer);
+  height: var(--ring-outer);
+}
+
+.icon-ring__inner {
+  width: var(--ring-inner);
+  height: var(--ring-inner);
+  color: var(--c-primary-light);
+}
+
+.icon-ring::before,
+.icon-ring__inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+.icon-ring::before {
+  background:
+    linear-gradient(40.7deg, #a685fa 0.8%, rgba(166, 133, 250, 0) 34.8%),
+    linear-gradient(219.1deg, #a685fa -6.9%, rgba(166, 133, 250, 0) 52.6%);
+}
+
+.icon-ring__inner::before {
+  background:
+    linear-gradient(130.5deg, #a685fa -3.3%, rgba(166, 133, 250, 0) 30.1%),
+    linear-gradient(305.3deg, #a685fa -21%, rgba(166, 133, 250, 0) 38%);
+}
+
+.icon-ring__inner .icon {
+  width: var(--ring-icon);
+  height: var(--ring-icon);
+}
+
+/* Feature strip (Home / Services / Contact) */
+.feature-strip {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--strip-gap);
+  padding: var(--strip-pad);
+  background: var(--c-bg);
+  /* outside stroke + 10px spread shadow, neither of which takes up layout space */
+  box-shadow: 0 0 0 1px var(--c-border), 0 0 0 var(--ring-shadow) var(--c-ring);
+}
+
+.feature-tile {
+  position: relative;
+}
+
+.feature-tile__link,
+.feature-tile--static {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--tile-gap);
+  height: 100%;
+  padding: calc(var(--tile-py) - 1px) calc(var(--tile-px) - 1px);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.feature-tile__link:hover {
+  border-color: var(--c-primary);
+}
+
+.feature-tile__title {
+  font-size: var(--fs-tile);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.feature-tile__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 var(--tile-links-gap);
+}
+
+.feature-tile__links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.feature-tile__links a:hover {
+  color: var(--c-primary-light);
+}
+
+.feature-tile__arrow {
+  position: absolute;
+  top: var(--tile-arrow-offset);
+  right: var(--tile-arrow-offset);
+  width: var(--tile-arrow);
+  height: var(--tile-arrow);
+  color: var(--c-dot);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.feature-tile__link:hover .feature-tile__arrow {
+  color: var(--c-text);
+  transform: translate(2px, -2px);
+}
+
+/* Pills / tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tag-gap);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: calc(var(--tag-py) - 1px) calc(var(--tag-px) - 1px);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 28px;
+  font-size: var(--fs-ui);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.tag .icon {
+  width: var(--tag-icon);
+  height: var(--tag-icon);
+}
+
+.tag--category {
+  justify-self: start;
+  padding-inline: calc(var(--tag-px-category) - 1px);
+  white-space: normal;
+}
+
+/* Price block */
+.price {
+  display: grid;
+  gap: var(--price-gap);
+}
+
+.price__label {
+  color: var(--c-muted);
+  font-size: var(--fs-ui);
+}
+
+.price__value {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Property card */
+.property-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+  height: 100%;
+  padding: calc(var(--card-pad) - 1px);
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+}
+
+.property-card__img {
+  width: 100%;
+  aspect-ratio: var(--home-card-img);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.property-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--card-body-gap);
+}
+
+.property-card__intro {
+  display: grid;
+  gap: var(--card-intro-gap);
+}
+
+.property-card__text {
+  display: grid;
+  gap: var(--card-text-gap);
+}
+
+.property-card__title {
+  font-size: var(--fs-h3);
+}
+
+.property-card__excerpt {
+  color: var(--c-muted);
+}
+
+.property-card__excerpt a {
+  color: var(--c-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.property-card__excerpt a:hover {
+  color: var(--c-primary-light);
+}
+
+/* Properties page variant (category pill instead of feature tags) */
+.property-card--listing {
+  gap: var(--card-gap-md);
+  padding: calc(var(--listing-pad) - 1px);
+}
+
+.property-card--listing .property-card__img {
+  aspect-ratio: var(--listing-card-img);
+}
+
+.property-card--listing .property-card__body {
+  gap: var(--card-gap-md);
+}
+
+.property-card--listing .property-card__footer {
+  gap: var(--card-footer-gap-sm);
+}
+
+.property-card__footer {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--card-footer-gap);
+  margin-top: auto;
+}
+
+.property-card__btn {
+  flex: 1;
+}
+
+/* Testimonial card */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--testimonial-gap);
+  height: 100%;
+  padding: calc(var(--card-pad-lg) - 1px);
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.stars {
+  display: flex;
+  gap: var(--stars-gap);
+}
+
+.stars__item {
+  display: grid;
+  place-items: center;
+  width: var(--star-box-w);
+  height: var(--star-box-h);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 50%;
+  color: var(--c-star);
+}
+
+.stars__item .icon {
+  width: var(--star-icon);
+  height: var(--star-icon);
+}
+
+.testimonial-card__quote {
+  display: grid;
+  gap: var(--testimonial-text-gap);
+}
+
+.testimonial-card__title {
+  font-size: var(--fs-h3);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--person-gap);
+  margin-top: auto;
+}
+
+.person__avatar {
+  width: var(--avatar);
+  height: var(--avatar);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person__text {
+  display: grid;
+  gap: var(--person-text-gap);
+}
+
+.person__name {
+  font-size: var(--fs-person);
+  line-height: 1.5;
+}
+
+.person__meta {
+  color: var(--c-muted);
+}
+
+/* FAQ card */
+.faq-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--faq-gap);
+  height: 100%;
+  padding: calc(var(--card-pad-lg) - 1px);
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.faq-card__question {
+  font-size: var(--fs-h3);
+}
+
+.faq-card__answer {
+  color: var(--c-muted);
+  letter-spacing: -0.006em;
+}
+
+.faq-card__btn {
+  margin-top: auto;
+  letter-spacing: -0.006em;
+}
+
+/* Generic bordered panel */
+.panel {
+  padding: calc(var(--card-pad-lg) - 1px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.panel__title {
+  font-size: var(--fs-h3);
+}
+
+/* Pill links (office contacts) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: calc(var(--pill-py) - 1px) calc(var(--pill-px) - 1px);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 28px;
+  font-size: var(--fs-ui);
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: border-color 0.2s ease;
+}
+
+a.pill:hover {
+  border-color: var(--c-primary);
+}
+
+.pill .icon {
+  width: var(--tag-icon);
+  height: var(--tag-icon);
+}
+
+/* --------------------------------------------------------------------------
+   Carousel — native horizontal scrolling with snap points, arrow buttons and
+   an "01 of 10" counter (see js/carousel.js).
+   -------------------------------------------------------------------------- */
+
+.carousel {
+  --per-view: 3;
+  --slide-gap: var(--grid-gap);
+}
+
+.carousel--two {
+  --per-view: 2;
+  --slide-gap: var(--clients-gap);
+}
+
+.carousel__track {
+  display: flex;
+  gap: var(--slide-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slide {
+  flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--slide-gap)) / var(--per-view));
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.carousel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: var(--carousel-footer-space);
+  padding-top: calc(var(--carousel-footer-pt) - 1px);
+  border-top: 1px solid var(--c-border);
+}
+
+.carousel__count {
+  color: var(--c-muted);
+  font-size: var(--fs-count);
+  line-height: 1.5;
+}
+
+.carousel__current {
+  color: var(--c-text);
+}
+
+/* Only the Desktop frame highlights the current number */
+@media (max-width: 1919.98px) {
+  .carousel__current {
+    color: inherit;
+  }
+}
+
+.carousel__controls {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,19 @@
+/*
+Theme Name: Estatein
+Theme URI: https://github.com/vinceramirezzzdev/estatein-vinceramirez
+Author: Vince Ramirez
+Description: Custom real estate theme built pixel-perfect from the "Estatein — Real Estate Business Website UI Template (Dark Theme)" Figma file. Includes Properties, Testimonials, FAQs, Team Members, Clients, Services and Offices post types, ACF-powered page content, a built-in enquiry system and one-click demo content.
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 7.1
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: estatein
+Tags: dark, one-column, custom-menu, custom-logo, featured-images, translation-ready, blog
+*/
+
+/*
+ * The theme styles live in assets/css/main.css (minified: main.min.css) and are
+ * shared with the static build in /static. They are enqueued from inc/assets.php.
+ */

@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Header — announcement banner + navigation bar
+   ========================================================================== */
+
+.site-header {
+  position: relative;
+  z-index: 20;
+}
+
+/* Announcement banner */
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: var(--banner-justify);
+  min-height: var(--banner-h);
+  padding: var(--banner-pt) var(--banner-px) calc(var(--banner-pb) - 1px);
+  overflow: hidden;
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.banner[hidden] {
+  display: none;
+}
+
+/* Abstract line pattern, positioned exactly as in the design (blended with colour dodge) */
+.banner__pattern {
+  position: absolute;
+  top: var(--banner-pattern-top);
+  left: var(--banner-pattern-left);
+  width: var(--banner-pattern-w);
+  height: var(--banner-pattern-h);
+  background: url('../icons/pattern-banner.svg') 0 0 / 100% 100% no-repeat;
+  mix-blend-mode: color-dodge;
+  pointer-events: none;
+}
+
+.banner__text {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: var(--banner-justify);
+  gap: 0 var(--banner-gap);
+  font-size: var(--fs-banner);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.banner__link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.banner__link:hover {
+  color: var(--c-primary-light);
+}
+
+.banner__close {
+  position: absolute;
+  top: calc(50% + (var(--banner-pt) - var(--banner-pb)) / 2);
+  right: var(--banner-close-right);
+  display: grid;
+  place-items: center;
+  width: var(--banner-close);
+  height: var(--banner-close);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+  transition: background-color 0.2s ease;
+}
+
+.banner__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.banner__close .icon {
+  width: var(--banner-close-icon);
+  height: var(--banner-close-icon);
+}
+
+/* Navigation bar */
+.navbar {
+  position: relative;
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-nav-border);
+}
+
+.navbar__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: calc(var(--content-max) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding: var(--nav-py) var(--gutter) calc(var(--nav-py) - 1px);
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+}
+
+/* The menu is centred on the page (as in the design), independent of the logo/CTA widths. */
+.navbar__menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: var(--nav-gap);
+  transform: translate(-50%, -50%);
+}
+
+.navbar__link {
+  display: block;
+  padding: calc(var(--nav-link-py) - 1px) 0;
+  border: 1px solid transparent;
+  border-radius: var(--btn-radius);
+  font-size: var(--fs-ui);
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--c-primary-light);
+}
+
+.navbar__link[aria-current='page'] {
+  padding-inline: calc(var(--btn-px) - 1px);
+  background: var(--c-bg);
+  border-color: var(--c-border);
+}
+
+.navbar__link[aria-current='page']:hover {
+  color: var(--c-text);
+}
+
+.navbar__cta {
+  padding-block: calc(var(--nav-cta-py) - 1px);
+}
+
+.navbar__cta[aria-current='page'] {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+}
+
+.navbar__toggle {
+  display: none;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--c-text);
+}
+
+.navbar__toggle .icon {
+  width: 28px;
+  height: 28px;
+}
+
+.navbar__toggle .icon--close {
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+
+.navbar__toggle[aria-expanded='true'] .icon--menu {
+  display: none;
+}
+
+.navbar__toggle[aria-expanded='true'] .icon--close {
+  display: block;
+}
+
+/* Below 1024px the menu collapses behind the hamburger icon from the Mobile design.
+   (The open state is not drawn in Figma; it reuses the navbar surface and links.) */
+@media (max-width: 1023px) {
+  .navbar__toggle {
+    display: grid;
+  }
+
+  .navbar__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px var(--gutter) 24px;
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .nav-open .navbar__nav {
+    display: flex;
+  }
+
+  .navbar__menu {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    transform: none;
+  }
+
+  .navbar__link,
+  .navbar__link[aria-current='page'] {
+    padding: calc(var(--btn-py) - 1px) calc(var(--btn-px) - 1px);
+  }
+
+  .navbar__cta {
+    justify-content: center;
+    padding-block: calc(var(--btn-py) - 1px);
+  }
+}

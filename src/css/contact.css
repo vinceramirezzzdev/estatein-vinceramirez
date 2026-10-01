@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Contact — offices (tabs) + gallery
+   ========================================================================== */
+
+.offices {
+  display: grid;
+  gap: var(--offices-gap);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  max-width: var(--tabs-w);
+  padding: 10px;
+  background: var(--c-surface);
+  border-radius: var(--tabs-radius);
+}
+
+.tabs__btn {
+  padding: calc(var(--btn-py) - 1px) calc(var(--btn-px) - 1px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--btn-radius);
+  line-height: 1.5;
+  transition: background-color 0.2s ease;
+}
+
+.tabs__btn:hover {
+  background: var(--c-border);
+}
+
+.tabs__btn[aria-selected='true'] {
+  background: var(--c-bg);
+}
+
+.offices__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.office-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--office-gap);
+  padding: calc(var(--office-pad) - 1px);
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--office-radius);
+}
+
+.office-card[hidden] {
+  display: none;
+}
+
+.office-card__text {
+  display: grid;
+  gap: 10px;
+}
+
+.office-card__type {
+  letter-spacing: -0.006em;
+}
+
+.office-card__address {
+  font-size: var(--fs-h3-xl);
+}
+
+.office-card__copy {
+  margin-top: 4px;
+  color: var(--c-muted);
+  letter-spacing: -0.006em;
+}
+
+.office-card__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.office-card .btn {
+  margin-top: auto;
+  letter-spacing: -0.006em;
+}
+
+.offices__empty {
+  color: var(--c-muted);
+}
+
+/* Explore Estatein's World */
+.office-gallery {
+  position: relative;
+  display: grid;
+  gap: 20px;
+  overflow: hidden;
+  padding: calc(var(--office-gallery-pad) - 1px);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.office-gallery__pattern {
+  position: absolute;
+  top: var(--gallery-pattern-top);
+  left: var(--gallery-pattern-left);
+  width: var(--gallery-pattern-w);
+  height: var(--gallery-pattern-h);
+  background: url('../icons/pattern-gallery.svg') 0 0 / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+.office-gallery > :not(.office-gallery__pattern) {
+  position: relative;
+}
+
+.office-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+    'a a c c'
+    'b b d e';
+  gap: 20px;
+}
+
+.office-gallery__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.office-gallery__img--a { grid-area: a; aspect-ratio: 709 / 236; }
+.office-gallery__img--b { grid-area: b; aspect-ratio: 709 / 236; }
+.office-gallery__img--c { grid-area: c; aspect-ratio: 709 / 236; }
+.office-gallery__img--d { grid-area: d; }
+.office-gallery__img--e { grid-area: e; }
+
+.office-gallery__footer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 20px;
+}
+
+.office-gallery__text {
+  position: relative;
+  display: grid;
+  gap: var(--title-gap);
+  padding-right: 20px;
+}
+
+.office-gallery__img--f {
+  aspect-ratio: 709 / 280;
+}
